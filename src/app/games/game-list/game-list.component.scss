@@ -1,0 +1,25 @@
+.gamesContainer{
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    .gamesCard{
+        margin: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 15rem;
+        height: 10rem;
+        box-shadow: 3px 3px 8px 4px rgba(black, 0.3);
+        cursor: pointer;
+        background-color: rgb(38, 0, 128);
+        color: white;
+        border-radius: 15px;
+        text-overflow: hidden;
+        h1{
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+<div class="gameContainer">
+    <div class="button-container" *ngIf="isUserAdmin()">
+        <button (click)="toggleEdit()"> <i class="fa" [ngClass]="{'fa-pencil': !isEdit, 'fa-close': isEdit}"></i></button>
+        <button (click)="deleteGame()"><i class="fa fa-trash"></i></button>
+    </div>
+    <div class="gameViewContainer" *ngIf="!isEdit && displayedGame!==undefined">
+        <h1>{{ displayedGame.name }}</h1>    
+        <p>Release date: {{ displayedGame.releaseDate }}</p>
+        <p>Description: {{ displayedGame.description }}</p>
+        <p>Price: ${{ displayedGame.price }}</p>
+    </div>
+    <div class="gameEditContainer" *ngIf="isEdit">
+        <form [formGroup]="gameUpdateForm" (ngSubmit)="editGame()">
+            <label for="Name">Name: </label>
+            <input id="Name" type="text" formControlName="Name" placeholder="{{ displayedGame.name }}">
+          
+            <label for="ReleaseDate">Release date: </label>
+            <input id="ReleaseDate" type="text" formControlName="ReleaseDate" placeholder="{{ displayedGame.releaseDate }}">
+        
+            <label for="Description">Description: </label>
+            <input id="Description" type="text" formControlName="Description" placeholder="{{ displayedGame.description }}">
+          
+            <label for="Price">Price: </label>
+            <input id="Price" type="text" formControlName="Price" placeholder="{{ displayedGame.price }}">
+    
+            <div *ngIf="invalidEdit" class="error">
+                <p>Beware of the placeholders!</p>
+                <p>Fill in all the fields!</p>
+            </div>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>    
+</div>

@@ -1,0 +1,26 @@
+<div class="navbarContainer">
+    <div class="logoContainer" [routerLink]="['/dashboard/games']" routerLinkActive="active">
+        <p>Catalogue</p>
+    </div>
+    <div class="navlinks" >
+        <button type="button" routerLink="/not-found">LazyLoad</button>
+        <button type="button" routerLink="/dashboard/games" *ngIf="_authService.isLoggedIn()">Games</button>
+        <button type="button" routerLink="/dashboard/game/create" *ngIf="_authService.isLoggedIn()">Create Game</button>
+        <button type="button" routerLink="/dashboard/username" *ngIf="_authService.isLoggedIn()">Set username</button>
+    </div>
+    <div class="loginLogoutContainer">
+        <div class="usernameContainer">
+            {{ username }}
+        </div>
+        <div *ngIf="_authService.isLoggedIn()" class="loginContainer">
+            <button (click)="onLogout()">
+                <a>Log Out</a>
+            </button>
+        </div>
+        <div *ngIf="!_authService.isLoggedIn()" class="logoutContainer">
+            <button [routerLink]="['/login']" routerLinkActive="active">
+                <a>Log In</a>
+            </button>
+        </div>
+    </div>
+</div>

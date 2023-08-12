@@ -1,0 +1,41 @@
+<div class="registerContainer">
+    <div class="registerFormContainer">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)" #f="ngForm">
+        <h1>Register</h1>
+        <!-- <label for="username">
+            <p>Username</p>
+            <input type="text" formControlName="username" placeholder="">
+            <small *ngIf="registerForm.get('username').errors?.['required'] && (registerForm.get('username').dirty || registerForm.get('username').touched)">Fill in your username!</small>
+            <small *ngIf="registerForm.get('username').errors?.['minlength'] && (registerForm.get('username').dirty || registerForm.get('username').touched)">The minimum length of a username is 5 chars!</small>
+            <small *ngIf="registerForm.get('username').errors?.['maxlength'] && (registerForm.get('username').dirty || registerForm.get('username').touched)">The maximum length of a username is 15 chars!</small>
+        </label>
+        <label for="firstname">
+            <p>Firstname</p>
+            <input type="text" formControlName="firstname" placeholder="">
+            <small *ngIf="registerForm.get('firstname').errors?.['required'] && (registerForm.get('firstname').dirty || registerForm.get('firstname').touched)">Fill in your firstname!</small>
+        </label>
+        <label for="lastname">
+            <p>Lastname</p>
+            <input type="text" formControlName="lastname" placeholder="">
+            <small *ngIf="registerForm.get('lastname').errors?.['required'] && (registerForm.get('lastname').dirty || registerForm.get('lastname').touched)">Fill in your lastname!</small>
+        </label> -->
+        <label for="email">
+            <p>Email</p>
+            <input type="text" formControlName="email" placeholder="">
+            <small *ngIf="registerForm.get('email').errors?.['required'] && (registerForm.get('email').dirty || registerForm.get('email').touched)">Fill in your email!</small>
+            <small *ngIf="registerForm.get('email').errors?.['email'] && (registerForm.get('email').dirty || registerForm.get('email').touched)">Fill in your email!</small>
+        </label>
+        <label for="password">
+            <p>Password</p>
+            <input type="password" formControlName="password" placeholder="">
+            <small *ngIf="registerForm.get('password').errors?.['required'] && (registerForm.get('password').dirty || registerForm.get('password').touched)">Fill in your password!</small>
+        </label>
+        <div class="buttonContainer">
+            <input type="submit" value="Register" id="registerButton">
+        </div>
+        <div class="loginContainer">
+            <p>Already have an account? <a routerLink="/login">Log In</a></p>
+        </div>
+        </form>
+    </div>
+</div>

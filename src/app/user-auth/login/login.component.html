@@ -1,0 +1,31 @@
+<div class="loginContainer">
+    <div class="loginFormContainer">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+        <h1>Login</h1>
+        <label for="username">
+            <p>Email</p>
+            <input type="text" placeholder="" formControlName="username">
+            <small *ngIf="loginForm.get('username').errors?.['required'] && (loginForm.get('username').dirty || loginForm.get('username').touched)">Fill in your username!</small>
+            <small *ngIf="loginForm.get('username').errors?.['minlength'] && (loginForm.get('username').dirty || loginForm.get('username').touched)">The minimum length of a username is 5 chars!</small>
+            <!-- <small *ngIf="loginForm.get('username').errors?.['maxlength'] && (loginForm.get('username').dirty || loginForm.get('username').touched)">The maximum length of a username is 15 chars!</small> -->
+            <small *ngIf="loginForm.get('username').errors?.['noWhitespace'] && (loginForm.get('username').dirty || loginForm.get('username').touched)">There cannot be whitespaces!</small>
+            <!-- <small *ngIf="loginForm.get('username').errors?.['pattern'] && (loginForm.dirty || loginForm.touched)">A username can only contain letters!</small> -->
+        </label>
+        <label for="password">
+            <p>Password</p>
+            <input type="password" placeholder="" formControlName="password">
+            <small *ngIf="loginForm.get('password').errors?.['required'] && (loginForm.get('password').dirty || loginForm.get('password').touched)">Fill in your password!</small>
+        </label>
+        <div *ngIf="invalidLogin" class="error">
+            <p>Invalid credentials!</p>
+        </div>
+
+        <div class="buttonContainer">
+            <input type="submit" value="Login" id="loginButton">
+        </div>
+        <div class="registerContainer">
+            <p>Don't have an account? <a [routerLink]="['/register']" routerLinkActive="active">Register here</a></p>
+        </div>
+        </form>
+    </div>
+</div>

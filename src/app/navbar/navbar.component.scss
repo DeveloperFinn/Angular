@@ -1,0 +1,42 @@
+
+.navbarContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(239, 232, 232);
+    .navlinks{
+        display: flex;
+        cursor: pointer;
+        button{
+            margin-right: 1rem;
+        }
+    }
+    .logoContainer{
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        height: 2rem;
+        background-color: rgb(38, 0, 128);
+        border-radius: 0px 0px 10px 0px;
+        color: white;
+        p{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+    .loginLogoutContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+        .usernameContainer{
+            margin-right: 1rem;
+        }
+        a{
+                text-decoration: none;
+                color: white;
+        }
+    }
+}

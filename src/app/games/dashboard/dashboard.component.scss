@@ -1,0 +1,35 @@
+.dashboardContainer{
+    margin: 1rem;
+    height: 80vh;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .gamesCardContainer{
+        margin: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+        width: 12rem;
+        height: 8rem;
+        box-shadow: 3px 3px 8px 4px rgba(black, 0.3);
+        cursor: pointer;
+        background-color: rgb(38, 0, 128);
+        color: white;
+        border-radius: 5px;
+        &:hover{
+            opacity: 0.8;
+        }
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

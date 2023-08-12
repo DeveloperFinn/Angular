@@ -1,0 +1,20 @@
+<div class="gameCreateContainer">
+    <form [formGroup]="gameCreateForm" (ngSubmit)="onSubmit()">
+        <label for="Name">Name: </label>
+        <input id="Name" type="text" formControlName="Name">
+      
+        <label for="ReleaseDate">Release date: </label>
+        <input id="ReleaseDate" type="date" formControlName="ReleaseDate">
+    
+        <label for="Description">Description: </label>
+        <input id="Description" type="text" formControlName="Description">
+      
+        <label for="Price">Price: </label>
+        <input id="Price" type="number" formControlName="Price">
+
+        <div *ngIf="invalidCreate" class="error">
+            <p>Fill in all the fields!</p>
+        </div>
+        <button type="submit">Create</button>
+    </form>
+</div>
